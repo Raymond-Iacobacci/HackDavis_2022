@@ -15,7 +15,6 @@ assert ApproxEqual(AirDensity(1000, 15), 1.1056)
 assert ApproxEqual(AirDensity(0, 10), 1.24663)
 assert ApproxEqual(AirDensity(1000, 10), 1.125123)
 assert ApproxEqual(HubHeightAdjustment(5, 2, 10), 6.29394)
-assert ApproxEqual(CircleArea(1), 2) # This should fail the test
 
 # Successful if the program reached this point!
 print('Success!')
