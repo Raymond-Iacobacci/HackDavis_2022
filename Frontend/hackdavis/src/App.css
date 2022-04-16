@@ -11,14 +11,3 @@ body, html, #root, .app {
     margin: auto;
     padding: 10px;
 }
-#first {
-    overflow: hidden;
-    width: 200px;
-    float:left; /* add this */
-    padding-bottom: 5px;
-}
-#second {
-    width: 200px;
-    overflow: hidden;
-    padding-bottom: 5px; /* if you don't want #second to wrap below #first */
-}

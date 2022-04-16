@@ -34,29 +34,25 @@ class MapContainer extends React.Component {
             <div className='Map' id='wrapper'> 
                
                <div id='first'>
-                    <h3 className='text-light w-50'>South East</h3>
+                    <h3 className='text-light w-50'>Pick a point</h3>
                     <InputField
                     type='text' 
-                    placeholder='South East Coord.' 
+                    placeholder='Select Coordinates' 
                     onChange={(val) => { this.setInputValue('lat', val)} } />
                 </div>
 
-               <div id='second'>     
-                    <h3 className='text-light w-50'>North West</h3>
-                    <InputField
-                        type='text-light'
-                        placeholder='North West Coord.'
-                        onChange={(val) => { this.setInputValue('long', val)} }
-                        />
-                </div>
+               
         
-                <Map
-                    google={this.props.google}
-                    zoom={6}
-                    style={mapStyles}
-                    initialCenter={{ lat: 47.444, lng: -122.176}}
-                
-                />
+                <Map 
+                                    google={this.props.google}
+                                    zoom={6}
+                                    style={mapStyles}
+                                    initialCenter={{ lat: 47.444, lng: -122.176}}
+                >
+                    <Marker position={{ lat: 48.00, lng: -122.00}} />
+                    
+                   
+                </Map>
 
             </div>
 
@@ -71,3 +67,17 @@ class MapContainer extends React.Component {
 export default GoogleApiWrapper({
     apiKey: api_Key
   })(MapContainer);
+
+
+
+  /**
+   * 
+   * <div id='second'>     
+                    <h3 className='text-light w-50'>North West</h3>
+                    <InputField
+                        type='text-light'
+                        placeholder='North West Coord.'
+                        onChange={(val) => { this.setInputValue('long', val)} }
+                        />
+                </div>
+   */
