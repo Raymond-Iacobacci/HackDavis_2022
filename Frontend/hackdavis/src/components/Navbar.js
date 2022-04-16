@@ -29,10 +29,10 @@ class Navbar extends React.Component {
                   Team Bio's
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="#">Nic's Bio</a></li>
-                  <li><a className="dropdown-item" href="#">Norman's Bio</a></li>
-                  <li><a className="dropdown-item" href="#">Raymon's Bio</a></li>
-                  <li><a className="dropdown-item" href="#">Jorge's Bio</a></li>
+                  <li><a className="dropdown-item" href="/aboutUs/nic">Nic's Bio</a></li>
+                  <li><a className="dropdown-item" href="/aboutUs/norman">Norman's Bio</a></li>
+                  <li><a className="dropdown-item" href="/aboutUs/raymon">Raymon's Bio</a></li>
+                  <li><a className="dropdown-item" href="/aboutUs/jorge">Jorge's Bio</a></li>
                 </ul>
               </li>
               
