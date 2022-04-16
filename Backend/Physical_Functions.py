@@ -2,6 +2,7 @@
 CUTOFF_LO = 1 # [m/s]
 CUTOFF_HIGH = 25 # [m/s]
 CP_MAX = 0.593 # [unitless]
+STABILITY = 0.143 # [unitless]
 
 # Convert from miles per hour to meters per second
 def MPHtoMPS(mph):
@@ -35,4 +36,4 @@ def AirDensity(elevation, temperature):
 
 # Compute the hub height adjustment using the wind profile power law
 def HubHeightAdjustment(velocity, measuredElevation, targetElevation):
-    return velocity * (targetElevation / measuredElevation) ** 0.143
+    return velocity * (targetElevation / measuredElevation) ** STABILITY

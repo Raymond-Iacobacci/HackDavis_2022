@@ -5,4 +5,7 @@ def OneWeek(fpath, weekStart):
     df = pd.read_csv(fpath)
     return df.loc[weekStart:(weekStart+6)]
 
-print(OneWeek('/home/nic/Desktop/Renewable-Energy-Farm/WeatherData/LondonBirmingham.csv', 2).to_string())
+out = OneWeek('/home/nic/Desktop/Renewable-Energy-Farm/WeatherData/LondonBirmingham.csv', 2)
+
+print(out.to_string())
+print(type(out))
