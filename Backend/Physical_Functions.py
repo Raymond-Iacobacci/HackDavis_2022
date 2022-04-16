@@ -32,3 +32,7 @@ def TurbinePower(windPower, coefficientOfPower):
 # Compute the air density adjustment based on the elevation (in meters) and the temperature (in Celsius)
 def AirDensity(elevation, temperature):
     return (1.225 - 1.194e-4 * elevation) * (273.15 + 15) / (273.15 + temperature)
+
+# Compute the hub height adjustment using the wind profile power law
+def HubHeightAdjustment(velocity, measuredElevation, targetElevation):
+    return velocity * (targetElevation / measuredElevation) ** 0.143
