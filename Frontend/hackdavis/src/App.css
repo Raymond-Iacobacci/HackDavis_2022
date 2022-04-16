@@ -7,3 +7,9 @@ body, html, #root, .app {
 .Home {
     text-align: center;    
 }
+
+
+.Map {
+    align-items: center;
+
+}
