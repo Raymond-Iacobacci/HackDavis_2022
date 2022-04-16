@@ -6,6 +6,17 @@ import './App.css'
 import AboutUs from './pages/AboutUs';
 
 function App() {
+
+  /**
+   * TODO: Type your bios here!
+   */
+  const Bios = {
+    Norman: '',
+    Jorge: '',
+    Nic: '',
+    Raymon: '',
+  };
+
   return (
     <div className="App">
       <div className='container align-items-center'> 
@@ -16,11 +27,11 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Home/>}/>
             <Route exact path='/turbineData' element={<Map />} />
-            <Route exact path='/aboutUs/Norman' element={<AboutUs name='Norman' major="Computer Science" bio=' '  />} />
+            <Route exact path='/aboutUs/Norman' element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman}  />} />
             
-            <Route exact path='/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio=' '  />} />
-            <Route exact path='/aboutUs/Nic' element={<AboutUs name='Nic' major='Mechanical Engineering'  bio=' '  />} />
-            <Route exact path='/aboutUs/Raymon' element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio=' '  />} />
+            <Route exact path='/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge}  />} />
+            <Route exact path='/aboutUs/Nic' element={<AboutUs name='Nic' major='Mechanical Engineering'  bio={Bios.Nic}  />} />
+            <Route exact path='/aboutUs/Raymon' element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon}  />} />
           </Routes>
 
 
