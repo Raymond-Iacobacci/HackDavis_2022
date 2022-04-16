@@ -34,18 +34,18 @@ class MapContainer extends React.Component {
             <div className='Map' id='wrapper'> 
                
                <div id='first'>
-                    <h3 className='text-light w-50'>Enter Latitude</h3>
+                    <h3 className='text-light w-50'>South East</h3>
                     <InputField
                     type='text' 
-                    placeholder='Latitude Coordinates' 
+                    placeholder='South East Coord.' 
                     onChange={(val) => { this.setInputValue('lat', val)} } />
                 </div>
 
                <div id='second'>     
-                    <h3>Enter Longitude</h3>
+                    <h3 className='text-light w-50'>North West</h3>
                     <InputField
                         type='text-light'
-                        placeholder='Longitude Coordinates'
+                        placeholder='North West Coord.'
                         onChange={(val) => { this.setInputValue('long', val)} }
                         />
                 </div>
