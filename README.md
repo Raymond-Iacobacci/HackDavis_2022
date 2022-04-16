@@ -1,2 +1,3 @@
-# Renewable-Energy-Farm
-HackDavis 2022!
+# Renewable Energy Farm
+
+Make for HackDavis 2022!
