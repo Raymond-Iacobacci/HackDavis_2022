@@ -4,6 +4,9 @@ import InputField from '../components/InputField';
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 // remove google maps api 
 
+import {observer} from 'mobx-react';
+import Information from '../Information/Info';
+
 const api_Key = 'AIzaSyCVqBK1RQ9LAUR8CspSF2axRU-6MVNThu8';
 const mapStyles = {
     width: '40%',
@@ -70,8 +73,8 @@ class MapContainer extends React.Component {
               body: JSON.stringify(newCoord, null, 2)
             });
             let result = await res.json();
-
-
+            
+            
 
         } 
         catch(e) {
@@ -89,18 +92,21 @@ class MapContainer extends React.Component {
           }
         }));
 
+        
+          JSON.stringify(newCoord.push(location)) 
+        
+        if(newCoord.length === 4) {
+          Information.pos = newCoord;
+          this.sendData();
+          
+          
+        }
+        
 
 
-        if(newCoord.length < 4) {
-            newCoord.push(location);
-         } else if (newCoord.length === 3) {
-           
-         }
 
-        newCoord.push(location);
-        console.log(JSON.stringify(newCoord, null, 2));
+      //  console.log(JSON.stringify(newCoord, null, 2));
         map.panTo(location);
-      
         
 
 
@@ -121,36 +127,52 @@ class MapContainer extends React.Component {
 
 
     render() {
-            return (
-                <div className='Map' id='wrapper'> 
-                   
-                   <div id='first'>
-                        <h3 className='text-light w-50'>Pick a point</h3>
-                        <InputField
-                        type='text' 
-                        placeholder='Select Coordinates' 
-                        onChange={(val) => { this.setInputValue('lat', val)} } />
-                    </div>
-    
-                   
-            <Wrapper apiKey={api_Key}>
-            <Map
-                  google={this.props.google}
-                  style={{
-                    width: "40%",
-                    height: "50%"
-                  }}
-                  initialCenter={this.state.fields.location}
-                  center={this.state.fields.location}
-                  zoom={14}
-                  onClick={(t, map, c) => {
-                    console.log(c);  
-                    this.addMarker(c.latLng, map)}}
-                >
-                  <Marker position={this.state.fields.location} />
-                </Map>
-                    </Wrapper>
-                </div>
+            return (newCoord.length < 4 ? 
+            <div className='Map' id='wrapper'> 
+                       
+     <Wrapper apiKey={api_Key}>
+     <Map
+           google={this.props.google}
+           style={{
+             width: "40%",
+             height: "50%"
+           }}
+           initialCenter={this.state.fields.location}
+           center={this.state.fields.location}
+           zoom={14}
+           onClick={(t, map, c) => {
+             this.addMarker(c.latLng, map)}}
+         >
+           <Marker position={this.state.fields.location} />
+         </Map>
+             </Wrapper>
+         </div> : 
+         <div className='Map'>
+           <Wrapper apiKey={api_Key}>
+     <Map
+           google={this.props.google}
+           style={{
+             width: "40%",
+             height: "50%"
+           }}
+           initialCenter={this.state.fields.location}
+           center={this.state.fields.location}
+           zoom={14}
+           onClick={(t, map, c) => {
+             this.addMarker(c.latLng, map)}}
+         >
+           
+           <Marker position={Information.pos[0]} />
+           
+           <Marker position={Information.pos[1]} />
+           <Marker position={Information.pos[3]} />
+           <Marker position={Information.pos[4]} />
+         
+         </Map>
+             </Wrapper>
+     
+         </div> 
+                
             )
         
 
@@ -163,9 +185,9 @@ class MapContainer extends React.Component {
 
 
 
-export default GoogleApiWrapper({
+export default observer(GoogleApiWrapper({
     apiKey: api_Key
-  })(MapContainer);
+  })(MapContainer));
 
 
 
