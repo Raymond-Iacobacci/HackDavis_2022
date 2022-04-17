@@ -22,17 +22,17 @@ class Navbar extends React.Component {
                 <a className="nav-link active" aria-current="page" href="https://nicfv.github.io/Renewable-Energy-Farm/">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="https://nicfv.github.io/turbineData">Turbine Data</a>
+                <a className="nav-link" href="https://nicfv.github.io/Renewable-Energy-Farm/turbineData">Turbine Data</a>
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Team Bio's
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="https://nicfv.github.io/aboutUs/nic">Nic's Bio</a></li>
-                  <li><a className="dropdown-item" href="https://nicfv.github.io/aboutUs/norman">Norman's Bio</a></li>
-                  <li><a className="dropdown-item" href="https://nicfv.github.io/aboutUs/raymon">Raymon's Bio</a></li>
-                  <li><a className="dropdown-item" href="https://nicfv.github.io/aboutUs/jorge">Jorge's Bio</a></li>
+                  <li><a className="dropdown-item" href="https://nicfv.github.io/Renewable-Energy-Farm/aboutUs/nic">Nic's Bio</a></li>
+                  <li><a className="dropdown-item" href="https://nicfv.github.io/Renewable-Energy-Farm/aboutUs/norman">Norman's Bio</a></li>
+                  <li><a className="dropdown-item" href="https://nicfv.github.io/Renewable-Energy-Farm/aboutUs/raymon">Raymon's Bio</a></li>
+                  <li><a className="dropdown-item" href="https://nicfv.github.io/Renewable-Energy-Farm/aboutUs/jorge">Jorge's Bio</a></li>
                 </ul>
               </li>
               
