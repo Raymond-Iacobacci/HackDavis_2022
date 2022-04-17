@@ -30,12 +30,12 @@ function App() {
           <Navbar />
           <Routes>
             <Route exact path='https://nicfv.github.io/Renewable-Energy-Farm/' element={<Home/>}/>
-            <Route exact path='https://nicfv.github.io/Renewable-Energy-Farm/turbineData' element={<Map />} />
-            <Route exact path='/aboutUs/Norman' element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman}  />} />
+            <Route exact path='https://nicfv.github.io/turbineData' element={<Map />} />
+            <Route exact path='https://nicfv.github.io/aboutUs/Norman' element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman}  />} />
             
-            <Route exact path='https://nicfv.github.io/Renewable-Energy-Farm/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge}  />} />
-            <Route exact path='https://nicfv.github.io/Renewable-Energy-Farm/aboutUs/Nic' element={<AboutUs name='Nic' major='Mechanical Engineering'  bio={Bios.Nic}  />} />
-            <Route exact path='https://nicfv.github.io/Renewable-Energy-Farm/aboutUs/Raymon' element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon}  />} />
+            <Route exact path='https://nicfv.github.io/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge}  />} />
+            <Route exact path='https://nicfv.github.io/aboutUs/Nic' element={<AboutUs name='Nic' major='Mechanical Engineering'  bio={Bios.Nic}  />} />
+            <Route exact path='https://nicfv.github.io/aboutUs/Raymon' element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon}  />} />
             
           </Routes>
 
