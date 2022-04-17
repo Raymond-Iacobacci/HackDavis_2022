@@ -162,13 +162,8 @@ class MapContainer extends React.Component {
            onClick={(t, map, c) => {
              this.addMarker(c.latLng, map)}}
          >
-           
            <Marker position={Information.pos[0]} />
-           
-           <Marker position={Information.pos[1]} />
-           <Marker position={Information.pos[3]} />
-           <Marker position={Information.pos[4]} />
-         
+          
          </Map>
              </Wrapper>
      
@@ -191,6 +186,13 @@ export default observer(GoogleApiWrapper({
   })(MapContainer));
 
 
+/**
+ * 
+ *  <Marker position={Information.pos[1]} />
+           <Marker position={Information.pos[3]} />
+           <Marker position={Information.pos[4]} />
+         
+ */
 
   /**
    * 

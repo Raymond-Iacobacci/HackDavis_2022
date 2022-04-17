@@ -18,3 +18,7 @@
 Wind turbines are one of the largest dangers for birds and we are trying to mitigate that with our program. This program predicts wind patterns around the world and crosschecks with bird migration flight patterns to find the best areas to construct new wind farms!
 
 ### Made for HackDavis 2022!
+
+## Links
+
+- https://nicfv.github.io/Renewable-Energy-Farm/ (Tentative)
