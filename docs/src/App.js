@@ -34,7 +34,7 @@ function App() {
             <Route path='/' element={<Home/>}/>
             <Route path='/turbineData' element={<Map />} />
             <Route path='/aboutUs/Norman' element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman} img='' />} />
-            <Route path='/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge} img='' />} />
+            <Route path='/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge} img='https://i.pinimg.com/originals/27/11/45/27114591b632f74dbf33dbe0f097a001.jpg' />} />
             <Route path='/aboutUs/Nic' element={<AboutUs name='Nic Ventura' major='Mechanical Engineering'  bio={Bios.Nic} img='https://bootdey.com/img/Content/user-453533-fdadfd.png' />} />
             <Route path='/aboutUs/Raymon' element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon} img='' />} />
 
