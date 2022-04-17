@@ -69,7 +69,7 @@ class MapContainer extends React.Component {
         try {
             let res = await fetch(`http://54.176.8.164:443/?lat=${JSON.stringify(Information["pos"][0]["lat"]())}&lon=${JSON.stringify(Information["pos"][0]["lng"]())}`, {
               method: 'post',
-              mode: 'cors', 
+              mode: 'no-cors', 
               headers: {
                 'Accept': 'application/json',
                 'Content-Type' : 'application/json'
@@ -192,7 +192,11 @@ class MapContainer extends React.Component {
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}>
             <div >
-              <h6 className='text-dark'>{this.state.selectedPlace.name}</h6>
+              <h6 className='text-dark'>Latitude: {Information['pos'][0]['lat']()}</h6>
+              <h6 className='text-dark'>Longitude: {Information['pos'][0]['lat']()}</h6>
+              <p className='text-dark'>Wind Speed: </p>
+              <p className='text-dark'> </p>
+              
             </div>
         </InfoWindow>
          </Map>
