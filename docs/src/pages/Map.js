@@ -147,7 +147,7 @@ class MapContainer extends React.Component {
          </Map>
              </Wrapper>
          </div> : 
-         <div className='Map'>
+         <div className='Map' id='wrapper'>
            <Wrapper apiKey={api_Key}>
      <Map
            google={this.props.google}
