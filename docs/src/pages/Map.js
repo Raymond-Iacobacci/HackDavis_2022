@@ -183,12 +183,12 @@ class MapContainer extends React.Component {
            onClick={(t, map, c) => {
              this.addMarker(c.latLng, map)}}
          >
+ 
            <Marker position={Information.pos[0]} title={'The marker`s title will appear as a tooltip.'}
     name={'Current Location'} 
     onClick={this.onMarkerClick} 
     />
          <Marker position={Information.pos[1]} title={'The marker`s title will appear as a tooltip.'}
-    name={'Current Location'} 
     onClick={this.onMarkerClick} 
     />
     <InfoWindow
