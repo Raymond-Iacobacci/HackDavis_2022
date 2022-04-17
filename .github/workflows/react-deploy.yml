@@ -29,8 +29,14 @@ jobs:
 
       - name: Installation
         run: |
+          cd docs
+          echo
+          pwd
           npm i
 
       - name: Deployment
         run: |
+          cd docs
+          echo
+          pwd
           npm run deploy
