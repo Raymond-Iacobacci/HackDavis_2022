@@ -13,7 +13,7 @@ function App() {
    */
   const Bios = {
     Norman:
-      ``,
+      `Hey! Im Norman Gutierrez and im a second year Computer Science major at UC Davis. I have strong interest in both web development and web3.0. Outside of school I like to swim, play piano, and visit new places.`,
     Jorge:
       `Hello, my name is Jorge Vilanova, or Alejandro. I am a 5th year Genetics major student at UC Davis. I've been working on my web development skills for the past two years since covid in hopes of one day launching my own web app as a business. I have been doing genetics and web development in the hopes of one day getting a job in the tech or biotech industry. I am also interested in the crypto community, running my own ethereum miner at home and working on dapps with the solidity programming language. I am passionate about web3.0 and its potential uses in the future for a decentralized future.`,
     Nic:
