@@ -6,7 +6,7 @@ import './App.css'
 import AboutUs from './pages/AboutUs';
 
 function App() {
-      
+
   /**
    * TODO: Type your bios here!
    */
@@ -21,24 +21,23 @@ function App() {
       ``,
   };
 
+  console.log(process.env.PUBLIC_URL);
   return (
     <div className="App">
-      <div className='container align-items-center'> 
-        <Router> 
+      <div className='container align-items-center'>
+        <Router basename={process.env.PUBLIC_URL}>
 
 
           <Navbar />
           <Routes>
-            <Route path={`${process.env.PUBLIC_URL}/`} element={<Home/>}/>
-            <Route path={`${process.env.PUBLIC_URL}/turbineData`} element={<Map />} />
-            <Route path={`${process.env.PUBLIC_URL}/aboutUs/Norman`} element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman}  />} />
-            <Route path={`${process.env.PUBLIC_URL}/aboutUs/Jorge`} element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge}  />} />
-            <Route path={`${process.env.PUBLIC_URL}/aboutUs/Nic`} element={<AboutUs name='Nic Ventura' major='Mechanical Engineering'  bio={Bios.Nic}  />} />
-            <Route path={`${process.env.PUBLIC_URL}/aboutUs/Raymon`} element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon}  />} />
-            
+            <Route path='/' element={<Home/>}/>
+            <Route path='/turbineData' element={<Map />} />
+            <Route path='/aboutUs/Norman' element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman}  />} />
+            <Route path='/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge}  />} />
+            <Route path='/aboutUs/Nic' element={<AboutUs name='Nic Ventura' major='Mechanical Engineering'  bio={Bios.Nic}  />} />
+            <Route path='/aboutUs/Raymon' element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon}  />} />
+
           </Routes>
-
-
 
         </Router>
       </div>

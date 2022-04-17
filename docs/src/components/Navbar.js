@@ -1,16 +1,16 @@
-import React from 'react'; 
+import React from 'react';
 
 class Navbar extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props);
+  }
 
 
-    render() {
-        return(
-           
-                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+  render() {
+    return (
+
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href={`${process.env.PUBLIC_URL}/`}>REDC1</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,14 +35,14 @@ class Navbar extends React.Component {
                   <li><a className="dropdown-item" href={`${process.env.PUBLIC_URL}/aboutUs/Jorge`}>Jorge's Bio</a></li>
                 </ul>
               </li>
-              
+
             </ul>
           </div>
         </div>
-    </nav>
-            
-        )
-    }
+      </nav>
+
+    )
+  }
 
 
 }
