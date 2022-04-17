@@ -10,7 +10,7 @@ class AboutUs extends React.Component {
         return(
             <div className="aboutus center">
                 <h1>{this.props.name} </h1>
-                <h3>Major: {this.props.major}</h3>
+                <h3>Major: <em>{this.props.major}</em></h3>
                 <h4>Bio:</h4>
                 <p>{this.props.bio}</p>
             </div>
