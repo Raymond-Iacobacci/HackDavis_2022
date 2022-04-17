@@ -19,7 +19,7 @@ class Navbar extends React.Component {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto ">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="https://nicfv.github.io/Renewable-Energy-Farm/">Home</a>
+                <a className="nav-link active" aria-current="page" href="/Renewable-Energy-Farm/">Home</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/turbineData">Turbine Data</a>
@@ -29,10 +29,10 @@ class Navbar extends React.Component {
                   Team Bio's
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="https://nicfv.github.io/aboutUs/nic">Nic's Bio</a></li>
-                  <li><a className="dropdown-item" href="https://nicfv.github.io/aboutUs/norman">Norman's Bio</a></li>
-                  <li><a className="dropdown-item" href="https://nicfv.github.io/aboutUs/raymon">Raymon's Bio</a></li>
-                  <li><a className="dropdown-item" href="https://nicfv.github.io/aboutUs/jorge">Jorge's Bio</a></li>
+                  <li><a className="dropdown-item" href="/aboutUs/Nic">Nic's Bio</a></li>
+                  <li><a className="dropdown-item" href="/aboutUs/norman">Norman's Bio</a></li>
+                  <li><a className="dropdown-item" href="/aboutUs/raymon">Raymon's Bio</a></li>
+                  <li><a className="dropdown-item" href="/aboutUs/jorge">Jorge's Bio</a></li>
                 </ul>
               </li>
               
