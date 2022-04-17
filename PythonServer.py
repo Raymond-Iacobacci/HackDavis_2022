@@ -6,6 +6,8 @@ import random
 import pickle
 import requests
 import json
+import pandas as pd
+import numpy as np
 
 class S(BaseHTTPRequestHandler):
     def _set_headers(self):
@@ -23,27 +25,23 @@ class S(BaseHTTPRequestHandler):
 
     def do_POST(self):
         self._set_headers()
-        print("in post method")
-        print(type(self.headers['Content-Length']))
-        self.data_string = self.headers['Content-Length']
-        print(self.data_string)
-
+        beg = self.path.find('=')
+        end = self.path.find('&')
+        lat = int(self.path[beg+1:end])
+        lon = int(self.path.split('=', 2)[2])
         newaimodel = pickle.load(open('AI_MOD', 'rb'))
-        #APIkey = 'd3ac75ca0f59c9b9d3f6960f7e2adba8';
-        url = 'http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=35&lon=139&dt=1649890549&appid=d3ac75ca0f59c9b9d3f6960f7e2adba8'
+        url = 'http://api.openweathermap.org/data/2.5/onecall/timemachine?lat='+str(lat)+'&lon='+str(lon)+'&dt=1649890549&appid=d3ac75ca0f59c9b9d3f6960f7e2adba8'
         json_response = json.loads(requests.get(url).text)
-        url = 'http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=35&lon=139&dt=1649804149&appid=d3ac75ca0f59c9b9d3f6960f7e2adba8'
-        json_response2 = json.loads(requests.get(url).text)
-        url = 'http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=35&lon=139&dt=1649717749&appid=d3ac75ca0f59c9b9d3f6960f7e2adba8'
-        json_response3 = json.loads(requests.get(url).text)
-        url = 'http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=35&lon=139&dt=1649631349&appid=d3ac75ca0f59c9b9d3f6960f7e2adba8'
-        json_response4 = json.loads(requests.get(url).text)
-        f = open("jsonfile.txt", "w")
-        f.write(json.dumps(json_response))
-        #overallJson = [json_response, json_response2, json_response3, json_response4]
-        #f = open("jsonfile.txt", "w")
-        #f.write(str(overallJson))
-        self.send_response(200)
+        h = json_response['hourly'][:]
+        x = []
+        for i in range(20):
+            x.append(h[len(h)-i-1]['wind_speed'])
+        z = []
+        for i in range(56):
+            z.append(x)
+        x = np.array(z)
+        y = newaimodel.predict(x)
+        self.send_response(200, y[0][0])
         self.end_headers()
         return None
 
