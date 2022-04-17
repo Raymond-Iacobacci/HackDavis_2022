@@ -20,4 +20,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Deployment
-        run: npm run deploy
+        run: |
+          ls -alhR
+          echo
+          npm run deploy
