@@ -26,5 +26,7 @@ jobs:
 
       - name: Deployment
         run: |
+          git config --global user.name "React Builder"
+          git config --global user.name "example@example.com"
           cd docs
           CI=false && npm run deploy
