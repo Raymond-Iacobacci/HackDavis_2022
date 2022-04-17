@@ -29,12 +29,12 @@ function App() {
 
           <Navbar />
           <Routes>
-            <Route exact path='/Renewable-Energy-Farm/' element={<Home/>}/>
-            <Route exact path='/Renewable-Energy-Farm/turbineData' element={<Map />} />
-            <Route exact path='/Renewable-Energy-Farm/aboutUs/Norman' element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman}  />} />
-            <Route exact path='/Renewable-Energy-Farm/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge}  />} />
-            <Route exact path='/Renewable-Energy-Farm/aboutUs/Nic' element={<AboutUs name='Nic Ventura' major='Mechanical Engineering'  bio={Bios.Nic}  />} />
-            <Route exact path='/Renewable-Energy-Farm/aboutUs/Raymon' element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon}  />} />
+            <Route path={`${process.env.PUBLIC_URL}/`} element={<Home/>}/>
+            <Route path={`${process.env.PUBLIC_URL}/turbineData`} element={<Map />} />
+            <Route path={`${process.env.PUBLIC_URL}/aboutUs/Norman`} element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman}  />} />
+            <Route path={`${process.env.PUBLIC_URL}/aboutUs/Jorge`} element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge}  />} />
+            <Route path={`${process.env.PUBLIC_URL}/aboutUs/Nic`} element={<AboutUs name='Nic Ventura' major='Mechanical Engineering'  bio={Bios.Nic}  />} />
+            <Route path={`${process.env.PUBLIC_URL}/aboutUs/Raymon`} element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon}  />} />
             
           </Routes>
 
