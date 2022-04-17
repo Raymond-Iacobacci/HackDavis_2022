@@ -67,7 +67,7 @@ class MapContainer extends React.Component {
       
       async sendData() {
         try {
-            let res = await fetch(`http://54.176.8.164:443/?lat=${Information.pos[0].lat}&lon=${Information.pos[0].lng}`, {
+            let res = await fetch(`http://54.176.8.164:443/?lat=${JSON.stringify(Information["pos"][0]["lat"]())}&lon=${JSON.stringify(Information["pos"][0]["lng"]())}`, {
               method: 'post',
               mode: 'cors', 
               headers: {
@@ -101,10 +101,12 @@ class MapContainer extends React.Component {
           JSON.stringify(newCoord.push(location)) 
         
         if(newCoord.length === 2) {
-          Information.pos = newCoord;
+          console.log(Information);
+          Information["pos"] = newCoord;
           console.log(JSON.stringify(Information ) )
           console.log(JSON.stringify(Information["pos"][0])  )
-          console.log(JSON.stringify(Information["pos"][0])['lat']  )
+          console.log("TESTING")
+          console.log(JSON.stringify(Information["pos"][0]["lat"]()))
           
           this.sendData();
           
