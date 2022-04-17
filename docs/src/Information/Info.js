@@ -8,4 +8,4 @@ class Information {
     }
 }
 
-export default new Information(); // makes an instance of new userstore when user loads it up 
+export default new Information(); // makes an instance of new userstore when user loads it up  
