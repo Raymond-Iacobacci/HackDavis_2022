@@ -10,8 +10,8 @@ class AboutUs extends React.Component {
         return(
             
                         
- <div class="container bootstrap snippets bootdey">
- <div class="profile card bg-dark">
+ <div class="container bootstrap snippets bootdey py-5">
+ <div class="profile card bg-dark ">
      <div class="profile-body">
          <div class="profile-bio">
              <div class="row">

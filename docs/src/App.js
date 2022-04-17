@@ -19,7 +19,7 @@ function App() {
     Nic:
       `Hi! My name is Nicolas Ventura, or Nic. I am a master\'s student in Mechanical and Aerospace Engineering at UC Davis. I work at Lawrence Berkeley National Laboratory for building energy monitoring and efficiency, and I am passionate about saving energy and going green. Outside of work and academics, I love hiking, camping, and skiing, and I am a connoiseur of all things Star Wars.`,
     Raymon:
-      ``,
+      `Hi! My name is Raymond Iacobacci, an Undergraduate doubling in Computer Science Engineering and Mathematics. I specialize in Machine Learning and Backend Development, and swim outside of school.`,
   };
 
   console.log(process.env.PUBLIC_URL);
@@ -36,7 +36,7 @@ function App() {
             <Route path='/aboutUs/Norman' element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman} img='https://m.media-amazon.com/images/I/71IIvk4xZIL._SS500_.jpg' />} />
             <Route path='/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge} img='https://i.pinimg.com/originals/27/11/45/27114591b632f74dbf33dbe0f097a001.jpg' />} />
             <Route path='/aboutUs/Nic' element={<AboutUs name='Nic Ventura' major='Mechanical Engineering'  bio={Bios.Nic} img='https://bootdey.com/img/Content/user-453533-fdadfd.png' />} />
-            <Route path='/aboutUs/Raymon' element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon} img='' />} />
+            <Route path='/aboutUs/Raymon' element={<AboutUs name='Raymond' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon} img='https://hbomax-images.warnermediacdn.com/images/GYULcuANBr8PCVAEAAALp/tileburnedin?size=1280x720&partner=hbomaxcom&v=de0526cf7cc67c3c73d5ac2666956c50&language=en-us&host=art-gallery.api.hbo.com&w=Infinity' />} />
 
           </Routes>
 

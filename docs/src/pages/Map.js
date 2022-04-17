@@ -137,21 +137,11 @@ class MapContainer extends React.Component {
         })
       }
       
-      returnType(str) {
-        if(str === []) {
-          return <h3></h3>
-        } else if (str) {
-          return(
-            <h2>Latitude: {Information.pos.lat}, Longitude: {Information.pos.lng} </h2>
-            
-          )
-        }
-      }
 
     render() {
             return (newCoord.length < 2 ? 
-            <div className='Map' id='wrapper'> 
-                       
+            <div className='container py-5' id='wrapper'> 
+                       <h2>Click on two small points on the map</h2>
      <Wrapper apiKey={api_Key}>
      <Map
            google={this.props.google}
@@ -168,27 +158,28 @@ class MapContainer extends React.Component {
            <Marker position={this.state.fields.location} />
          </Map>
              </Wrapper>
-         </div> : 
-         <div className='Map' id='wrapper'>
+         </div> 
+         : 
+         <div className='container py-5' id='wrapper'>
+           <h2>Take a look at it</h2>
            <Wrapper apiKey={api_Key}>
-     <Map
-           google={this.props.google}
-           style={{
-             width: "40%",
-             height: "50%"
-           }}
-           initialCenter={this.state.fields.location}
-           center={this.state.fields.location}
-           zoom={14}
-           onClick={(t, map, c) => {
-             this.addMarker(c.latLng, map)}}
+              <Map
+              google={this.props.google}
+              style={{
+                width: "40%",
+                   height: "50%"
+                  }}
+               initialCenter={this.state.fields.location}
+              center={this.state.fields.location}
+              zoom={14}
+              onClick={(t, map, c) => {
+              this.addMarker(c.latLng, map)}}
          >
  
            <Marker position={Information.pos[0]} title={'The marker`s title will appear as a tooltip.'}
-    name={'Current Location'} 
     onClick={this.onMarkerClick} 
     />
-         <Marker position={Information.pos[1]} title={'The marker`s title will appear as a tooltip.'}
+         <Marker position={Information.pos[1]} title={'The marker`s title will appear as a tooltip.'} 
     onClick={this.onMarkerClick} 
     />
     <InfoWindow
@@ -196,14 +187,13 @@ class MapContainer extends React.Component {
           visible={this.state.showingInfoWindow}>
             <div >
               <h6 className='text-dark'>{this.state.selectedPlace.name}</h6>
-
             </div>
         </InfoWindow>
          </Map>
              </Wrapper>
-            <div className='sampleText'>
-                  {this.returnType()}
-                   </div>
+           
+                  
+
 
          </div> 
                 
