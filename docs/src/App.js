@@ -30,12 +30,11 @@ function App() {
           <Navbar />
           <Routes>
             <Route exact path='/Renewable-Energy-Farm/' element={<Home/>}/>
-            <Route exact path='/turbineData' element={<Map />} />
-            <Route exact path='/aboutUs/Norman' element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman}  />} />
-            
-            <Route exact path='/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge}  />} />
-            <Route exact path='/aboutUs/Nic' element={<AboutUs name='Nic Ventura' major='Mechanical Engineering'  bio={Bios.Nic}  />} />
-            <Route exact path='/aboutUs/Raymon' element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon}  />} />
+            <Route exact path='/Renewable-Energy-Farm/turbineData' element={<Map />} />
+            <Route exact path='/Renewable-Energy-Farm/aboutUs/Norman' element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman}  />} />
+            <Route exact path='/Renewable-Energy-Farm/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge}  />} />
+            <Route exact path='/Renewable-Energy-Farm/aboutUs/Nic' element={<AboutUs name='Nic Ventura' major='Mechanical Engineering'  bio={Bios.Nic}  />} />
+            <Route exact path='/Renewable-Energy-Farm/aboutUs/Raymon' element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon}  />} />
             
           </Routes>
 
