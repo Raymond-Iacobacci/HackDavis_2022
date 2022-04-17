@@ -11,6 +11,7 @@ class Home extends React.Component {
     render() {
         return( 
             <div className="home">
+              <div className='test'>
                 <header className="masthead">
                     <div className="container position-relative px-4 px-lg-5">
                         <div className="row gx-4 gx-lg-5 justify-content-center">
@@ -21,8 +22,10 @@ class Home extends React.Component {
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </header>
+                </div>
                 <main className="mb-4">
                     <div className="container px-4 px-lg-5">
                         <div className="row gx-4 gx-lg-5 justify-content-center">
