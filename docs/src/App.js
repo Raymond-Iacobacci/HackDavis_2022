@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Map from './pages/Map.js';
 import './App.css'
 import AboutUs from './pages/AboutUs';
+import initMap from './pages/Test';
 
 function App() {
 
@@ -30,7 +31,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route exact path='https://nicfv.github.io/Renewable-Energy-Farm/' element={<Home/>}/>
-            <Route exact path='/turbineData' element={<Map />} />
+            <Route exact path='/turbineData' element={<initMap />} />
             <Route exact path='https://nicfv.github.io/aboutUs/Norman' element={<AboutUs name='Norman' major="Computer Science" bio={Bios.Norman}  />} />
             
             <Route exact path='https://nicfv.github.io/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge}  />} />
