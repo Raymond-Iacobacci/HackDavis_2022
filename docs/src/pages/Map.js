@@ -1,10 +1,11 @@
 import React from 'react'; 
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow  } from 'google-maps-react';
 import { Wrapper} from "@googlemaps/react-wrapper";
 // remove google maps api 
 
 import {observer} from 'mobx-react';
 import Information from '../Information/Info';
+import Card from '../components/Card';
 
 
 
@@ -36,7 +37,10 @@ class MapContainer extends React.Component {
           currentLocation: {
             lat,
             lng
-          }
+          }, 
+          showingInfoWindow: false,
+    activeMarker: {},
+    selectedPlace: {},
         }));
         
       }
@@ -63,7 +67,7 @@ class MapContainer extends React.Component {
       
       async sendData() {
         try {
-            let res = await fetch('/cData', {
+            let res = await fetch('http://localhost:8000/cData', {
               method: 'post',
               headers: {
                 'Accept': 'application/json',
@@ -94,7 +98,7 @@ class MapContainer extends React.Component {
         
           JSON.stringify(newCoord.push(location)) 
         
-        if(newCoord.length === 4) {
+        if(newCoord.length === 2) {
           Information.pos = newCoord;
           console.log(JSON.stringify(newCoord, null, 2) )
           console.log(JSON.stringify(Information.pos, null, 2))
@@ -102,16 +106,25 @@ class MapContainer extends React.Component {
           
           
         }
-        
-
-
-
       //  console.log(JSON.stringify(newCoord, null, 2));
         map.panTo(location);
-        
-
-
       };
+      
+      onMarkerClick = (props, marker, e) =>
+      this.setState({
+        selectedPlace: props,
+        activeMarker: marker,
+        showingInfoWindow: true
+      });
+  
+    onMapClicked = (props) => {
+      if (this.state.showingInfoWindow) {
+        this.setState({
+          showingInfoWindow: false,
+          activeMarker: null
+        })
+      }
+    };
 
 
     setInputValue(property, val) {
@@ -124,11 +137,19 @@ class MapContainer extends React.Component {
         })
       }
       
-      
-
+      returnType(str) {
+        if(str === []) {
+          return <h3></h3>
+        } else if (str) {
+          return(
+            <h2>Latitude: {Information.pos.lat}, Longitude: {Information.pos.lng} </h2>
+            
+          )
+        }
+      }
 
     render() {
-            return (newCoord.length < 4 ? 
+            return (newCoord.length < 2 ? 
             <div className='Map' id='wrapper'> 
                        
      <Wrapper apiKey={api_Key}>
@@ -162,11 +183,28 @@ class MapContainer extends React.Component {
            onClick={(t, map, c) => {
              this.addMarker(c.latLng, map)}}
          >
-           <Marker position={Information.pos[0]} />
-          
+           <Marker position={Information.pos[0]} title={'The marker`s title will appear as a tooltip.'}
+    name={'Current Location'} 
+    onClick={this.onMarkerClick} 
+    />
+         <Marker position={Information.pos[1]} title={'The marker`s title will appear as a tooltip.'}
+    name={'Current Location'} 
+    onClick={this.onMarkerClick} 
+    />
+    <InfoWindow
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}>
+            <div >
+              <h6 className='text-dark'>{this.state.selectedPlace.name}</h6>
+
+            </div>
+        </InfoWindow>
          </Map>
              </Wrapper>
-     
+            <div className='sampleText'>
+                  {this.returnType()}
+                   </div>
+
          </div> 
                 
             )
