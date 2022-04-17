@@ -24,7 +24,8 @@ jobs:
           ls -R
           echo
           cd docs
-          npm run deploy
+          echo
+          pwd
 
       - name: Installation
         run: |
