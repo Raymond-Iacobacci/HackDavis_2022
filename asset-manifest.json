@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Renewable-Energy-Farm/static/css/main.13b77fe1.css",
-    "main.js": "/Renewable-Energy-Farm/static/js/main.98ad674f.js",
+    "main.css": "/Renewable-Energy-Farm/static/css/main.fc0a0732.css",
+    "main.js": "/Renewable-Energy-Farm/static/js/main.b8914fd1.js",
     "static/media/wind-turbines-1.jpeg": "/Renewable-Energy-Farm/static/media/wind-turbines-1.11136c7ef271a01cb610.jpeg",
     "index.html": "/Renewable-Energy-Farm/index.html",
-    "main.13b77fe1.css.map": "/Renewable-Energy-Farm/static/css/main.13b77fe1.css.map",
-    "main.98ad674f.js.map": "/Renewable-Energy-Farm/static/js/main.98ad674f.js.map"
+    "main.fc0a0732.css.map": "/Renewable-Energy-Farm/static/css/main.fc0a0732.css.map",
+    "main.b8914fd1.js.map": "/Renewable-Energy-Farm/static/js/main.b8914fd1.js.map"
   },
   "entrypoints": [
-    "static/css/main.13b77fe1.css",
-    "static/js/main.98ad674f.js"
+    "static/css/main.fc0a0732.css",
+    "static/js/main.b8914fd1.js"
   ]
 }
