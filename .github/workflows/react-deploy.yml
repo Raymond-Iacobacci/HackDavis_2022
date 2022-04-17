@@ -21,6 +21,7 @@ jobs:
 
       - name: Deployment
         run: |
-          ls -alhR
+          ls -R
           echo
+          cd docs
           npm run deploy
