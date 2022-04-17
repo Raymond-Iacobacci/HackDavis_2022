@@ -22,7 +22,7 @@ class Navbar extends React.Component {
                 <a className="nav-link active" aria-current="page" href="/Renewable-Energy-Farm/">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/turbineData">Turbine Data</a>
+                <a className="nav-link" href="https://nicfv.github.io/Renewable-Energy-Farm/turbineData">Turbine Data</a>
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
