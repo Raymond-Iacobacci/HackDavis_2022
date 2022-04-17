@@ -20,4 +20,4 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Unit testing
-        run: python3 Backend/Unit_Tests.py
+        run: python3 Server/Unit_Tests.py
