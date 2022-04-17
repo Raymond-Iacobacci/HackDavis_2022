@@ -9,13 +9,16 @@ const mapStyles = {
     width: '40%',
     height: '50%',
   };
+  let newCoord = []
 
 class MapContainer extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {
             fields: {},
-            currentLocation: {}
+            currentLocation: {},
+            lat: '', 
+            longitude: ''
         }
     }
     async componentDidMount() {
@@ -33,7 +36,9 @@ class MapContainer extends React.Component {
             lng
           }
         }));
+        
       }
+
     
        getcurrentLocation() {
         if (navigator && navigator.geolocation) {
@@ -52,15 +57,55 @@ class MapContainer extends React.Component {
           lng: 0
         };
       }
+
+      
+      async sendData() {
+        try {
+            let res = await fetch('/cData', {
+              method: 'post',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type' : 'application/json'
+              }, 
+              body: JSON.stringify(newCoord, null, 2)
+            });
+            let result = await res.json();
+
+
+
+        } 
+        catch(e) {
+          console.log(e);
+        }
+      }
+
+      
       addMarker = (location, map) => {
+        
         this.setState(prev => ({
           fields: {
             ...prev.fields,
             location
           }
         }));
+
+
+
+        if(newCoord.length < 4) {
+            newCoord.push(location);
+         } else if (newCoord.length === 3) {
+           
+         }
+
+        newCoord.push(location);
+        console.log(JSON.stringify(newCoord, null, 2));
         map.panTo(location);
+      
+        
+
+
       };
+
 
     setInputValue(property, val) {
         
@@ -72,13 +117,7 @@ class MapContainer extends React.Component {
         })
       }
 
-      handleClick(event) {
-          var lat = event.latLng.lat(), lng = event.latLng.lng()
-            this.setState({
-                lat : lat,
-                long: lng
-            })
-        }
+     
 
 
     render() {
@@ -104,7 +143,9 @@ class MapContainer extends React.Component {
                   initialCenter={this.state.fields.location}
                   center={this.state.fields.location}
                   zoom={14}
-                  onClick={(t, map, c) => this.addMarker(c.latLng, map)}
+                  onClick={(t, map, c) => {
+                    console.log(c);  
+                    this.addMarker(c.latLng, map)}}
                 >
                   <Marker position={this.state.fields.location} />
                 </Map>
