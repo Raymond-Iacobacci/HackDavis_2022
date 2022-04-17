@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Map from './pages/Map.js';
 import './App.css'
 import AboutUs from './pages/AboutUs';
+import ResponsePage from './pages/ResponsePage';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
             <Route exact path='/aboutUs/Jorge' element={<AboutUs name='Jorge' major='Genetics'  bio={Bios.Jorge}  />} />
             <Route exact path='/aboutUs/Nic' element={<AboutUs name='Nic' major='Mechanical Engineering'  bio={Bios.Nic}  />} />
             <Route exact path='/aboutUs/Raymon' element={<AboutUs name='Raymon' major='Computer Science and Engineering, Mathematics' bio={Bios.Raymon}  />} />
+            
           </Routes>
 
 
