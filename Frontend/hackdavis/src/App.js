@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Map from './pages/Map.js';
 import './App.css'
 import AboutUs from './pages/AboutUs';
-import ResponsePage from './pages/ResponsePage';
 
 function App() {
 
