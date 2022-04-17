@@ -1,18 +1,17 @@
 import React from 'react'; 
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import InputField from '../components/InputField';
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
+import { Wrapper} from "@googlemaps/react-wrapper";
 // remove google maps api 
 
 import {observer} from 'mobx-react';
 import Information from '../Information/Info';
 
+
+
+
 const api_Key = 'AIzaSyCVqBK1RQ9LAUR8CspSF2axRU-6MVNThu8';
-const mapStyles = {
-    width: '40%',
-    height: '50%',
-  };
-  let newCoord = []
+
+  let newCoord = [];
 
 class MapContainer extends React.Component {
     constructor(props) {
@@ -97,6 +96,8 @@ class MapContainer extends React.Component {
         
         if(newCoord.length === 4) {
           Information.pos = newCoord;
+          console.log(JSON.stringify(newCoord, null, 2) )
+          console.log(JSON.stringify(Information.pos, null, 2))
           this.sendData();
           
           
@@ -122,8 +123,8 @@ class MapContainer extends React.Component {
           [property]: val // [property] can be reused since we are changing it in the state
         })
       }
-
-     
+      
+      
 
 
     render() {
@@ -161,13 +162,8 @@ class MapContainer extends React.Component {
            onClick={(t, map, c) => {
              this.addMarker(c.latLng, map)}}
          >
-           
            <Marker position={Information.pos[0]} />
-           
-           <Marker position={Information.pos[1]} />
-           <Marker position={Information.pos[3]} />
-           <Marker position={Information.pos[4]} />
-         
+          
          </Map>
              </Wrapper>
      
@@ -190,6 +186,13 @@ export default observer(GoogleApiWrapper({
   })(MapContainer));
 
 
+/**
+ * 
+ *  <Marker position={Information.pos[1]} />
+           <Marker position={Information.pos[3]} />
+           <Marker position={Information.pos[4]} />
+         
+ */
 
   /**
    * 
